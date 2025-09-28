@@ -326,8 +326,24 @@ hacker@commands~hidden-files:/$ ls -a
 hacker@commands~hidden-files:/$ cat .flag-115902894710803
 pwn.college{Yx3nz7ujBlvI5MMFbNy-9cumWlv.QXwUDO0wCOykjNzEzW}
 ```
+
+
+
+### Solve
+I first made a directory with the required name using the mkdir command. I then changed the directory to the new directory created by using cd command followed by making the college file in the required directory.
+**Flag:-** pwn.college{EjvoaXZtBmFu7iuJ-Cx0cWQsH3A.QXxMDO0wCOykjNzEzW}
 ```
+hacker@commands~making-directories:~$ mkdir /tmp/pwn
+hacker@commands~making-directories:/tmp$ cd /tmp/pwn
+hacker@commands~making-directories:/tmp/pwn$ touch college
+hacker@commands~making-directories:/tmp/pwn$ ls
+college
+hacker@commands~making-directories:/tmp/pwn$ /challenge/run
+Success! Here is your flag:
+pwn.college{EjvoaXZtBmFu7iuJ-Cx0cWQsH3A.QXxMDO0wCOykjNzEzW}
 ```
+### New Learning
+I learned how to make a directory and create a file in it.
 ```
 ```
 ```
