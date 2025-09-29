@@ -61,6 +61,7 @@ pwn.college{sITe9g7iZ5rvt6yCkCJ2vV6Dhjq.QX0IDO0wCOykjNzEzW}
 I learned how to access the file through home directory by specifying the path and then finding the required files using [].
 
 ## Multiple globs
+ We put a few happy, but diversely-named files in /challenge/files. Go cd there and run /challenge/run, providing a single argument: a short (3 characters or less) globbed word with two * globs in it that covers every word that contains the letter p.
 ### Solve
 Went to the challenge files directory and then did challenge run and passed *p* as an argument.
 **Flag:-** pwn.college{cbbU18nn3tfOSa6UGBxPbJ7P14h.0lM3kjNxwCOykjNzEzW}
@@ -76,8 +77,9 @@ pwn.college{cbbU18nn3tfOSa6UGBxPbJ7P14h.0lM3kjNxwCOykjNzEzW}
 I learned how multiple globbing works. * fills the letters before the specified word and * fills the letters after the specified word.
 
 ## Mixing globs
+Now, let's put the previous levels together! We put a few happy, but diversely-named files in /challenge/files. Go cd there and, using the globbing you've learned, write a single, short (6 characters or less) glob that (when passed as an argument to /challenge/run) will match the files "challenging", "educational", and "pwning"
 ### Solve
-
+Changed directory to challenge files and then ran the file using [cep]* as argument as c,e,p are unique starting points for the files and * autocompletes the names of the files
 **Flag:-** pwn.college{oQUGnskt9byMj2_Mp_8zdN4841l.QX1IDO0wCOykjNzEzW}
 ```
 hacker@globbing~mixing-globs:~$ cd /challenge/files/
@@ -90,9 +92,12 @@ You got it! Here is your flag!
 pwn.college{oQUGnskt9byMj2_Mp_8zdN4841l.QX1IDO0wCOykjNzEzW}
 ```
 ### New learning
+I learned how to mix globs for better use and efficiency.
 
+## Exclusionary globbing
+Go forth to /challenge/files and run /challenge/run with all files that don't start with p, w, or n.
 ### Solve
-
+Got into the directory and did /challenge/run to run the file with [^pwn]* as an argument because ^ will exclude all file starting with p,w,n.
 **Flag:-** pwn.college{YHQ88KXCee74nne-QQRpDFarRAh.QX2IDO0wCOykjNzEzW}
 ```
 hacker@globbing~exclusionary-globbing:~$ cd /challenge/files/
@@ -101,9 +106,12 @@ You got it! Here is your flag!
 pwn.college{YHQ88KXCee74nne-QQRpDFarRAh.QX2IDO0wCOykjNzEzW}
 ```
 ### New learning
+I learned how to exclude the files I don't want.
 
+## Tab completion
+This challenge has copied the flag into /challenge/pwncollege, and you can freely cat that file. But you can't type the filename: we used some serious trickery to make sure that you must tab-complete it.
 ### Solve
-
+Used cat command and then tab key for completion and faster work.
 **Flag:-** pwn.college{UWvbwVA1tXg8f0nIZQ-CNAjWrE9.0FN0EzNxwCOykjNzEzW}
 ```
 hacker@globbing~tab-completion:~$ ls /challenge
@@ -114,17 +122,19 @@ hacker@globbing~tab-completion:~$ cat /challenge/pwncollege​
 pwn.college{UWvbwVA1tXg8f0nIZQ-CNAjWrE9.0FN0EzNxwCOykjNzEzW}
 ```
 ### New learning
+Using tab key to autofill.
 
 ## Multiple options for tab completion
+This challenge has a /challenge/files directory with a bunch of files starting with pwncollege. Tab-complete from /challenge/files/p or so, and make your way to the flag
 ### Solve
-
+Used  cat command and then to autofill the directory
 **Flag:-** pwn.college{o3rQPm2hiVdV2uf483Dji60Hrf6.0lN0EzNxwCOykjNzEzW}
 ```
 hacker@globbing~multiple-options-for-tab-completion:~$ cat /challenge/files/pwncollege-flag
 pwn.college{o3rQPm2hiVdV2uf483Dji60Hrf6.0lN0EzNxwCOykjNzEzW}
 ```
 ### New learning
-
+I learned more broader usage of tab key.
 
 ## Tab completion on commands
 Tab completion is for more than files! You can also tab-complete commands. This level has a command that starts with pwncollege, and it'll give you the flag.
