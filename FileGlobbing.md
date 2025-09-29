@@ -14,10 +14,12 @@ pwn.college{8mRo46qrRpKdOjE3p29XmzGz9wA.QXxIDO0wCOykjNzEzW}
 ```
 
 ? symbol only finds that missing place letter by comparing the other lettters available. So just replace c and l with ?
+```
 hacker@globbing~matching-with-:~$ cd /?ha??enge
 hacker@globbing~matching-with-:/challenge$ /challenge/run
 You ran me with the working directory of /challenge! Here is your flag:
 pwn.college{0f3vdIpjvngEC-Fh3LC9aMpFn6j.QXyIDO0wCOykjNzEzW}
+```
 
 Change the directory using cd and the use [] to find the particular files required
 ```
@@ -59,4 +61,24 @@ hacker@globbing~exclusionary-globbing:~$ cd /challenge/files/
 hacker@globbing~exclusionary-globbing:/challenge/files$ /challenge/run [^pwn]*
 You got it! Here is your flag!
 pwn.college{YHQ88KXCee74nne-QQRpDFarRAh.QX2IDO0wCOykjNzEzW}
+```
+
+```
+hacker@globbing~tab-completion:~$ ls /challenge
+DESCRIPTION.md  pwncollege​
+hacker@globbing~tab-completion:~$ /challenge/p
+bash: /challenge/p: No such file or directory
+hacker@globbing~tab-completion:~$ cat /challenge/pwncollege​ 
+pwn.college{UWvbwVA1tXg8f0nIZQ-CNAjWrE9.0FN0EzNxwCOykjNzEzW}
+```
+
+```
+hacker@globbing~multiple-options-for-tab-completion:~$ cat /challenge/files/pwncollege-flag
+pwn.college{o3rQPm2hiVdV2uf483Dji60Hrf6.0lN0EzNxwCOykjNzEzW}
+```
+
+```
+hacker@globbing~tab-completion-on-commands:~$ pwncollege-13065 
+Correct! Here is your flag:
+pwn.college{UwPebEIuAL-zZvfTebj9Q_jN4Tq.0VN0EzNxwCOykjNzEzW}
 ```
