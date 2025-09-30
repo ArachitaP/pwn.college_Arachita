@@ -2,47 +2,28 @@
 
 ## cat: not the pet, but the command
 One of the most critical Linux commands is cat. cat is most often used for reading out files, like so:
-
-hacker@dojo:~$ cat /challenge/DESCRIPTION.md
-One of the most critical Linux commands is `cat`.
-`cat` is most often used for reading out files, like so:
-cat will concatenate (hence the name) multiple files if provided multiple arguments. For example:
-```
-hacker@dojo:~$ cat myfile
-This is my file!
-hacker@dojo:~$ cat yourfile
-This is your file!
-hacker@dojo:~$ cat myfile yourfile
-This is my file!
-This is your file!
-hacker@dojo:~$ cat myfile yourfile myfile
-This is my file!
-This is your file!
-This is my file!
-```
-Finally, if you give no arguments at all, cat will read from the terminal input and output it. We'll explore that in later challenges...
+cat will concatenate (hence the name) multiple files if provided multiple arguments.
+Finally, if you give no arguments at all, cat will read from the terminal input and output it.
 
 In this challenge, I will copy the flag to the flag file in your home directory (where your shell starts). Go read it with cat!
 ### Solve
+Did cat flag to read out the flag.
 **Flag:-** pwn.college{EhJyLEJqXQ9Pe2pzoYFQp2zjAXr.QXxcTN0wCOykjNzEzW}
 ```
 hacker@commands~cat-not-the-pet-but-the-command:~$ cat flag
 pwn.college{EhJyLEJqXQ9Pe2pzoYFQp2zjAXr.QXxcTN0wCOykjNzEzW}
 ```
 ### New Learning
+I learned how to use the cat command.
 
 
-## catting absolute paths
+## Catting absolute paths
 In the last level, you did cat flag to read the flag out of your home directory! You can, of course, specify cat's arguments as absolute paths:
-```
-hacker@dojo:~$ cat /challenge/DESCRIPTION.md
-In the last level, you did `cat flag` to read the flag out of your home directory!
-You can, of course, specify `cat`'s arguments as absolute paths:
-...
-```
+
 In this directory, I will not copy it to your home directory, but I will make it readable. You can read it with cat at its absolute path: /flag.
 FUN FACT: /flag is where the flag always lives in pwn.college, but unlike in this challenge, you typically can't access that file directly.
 ### Solve
+Used cat command and /flag as an argument to get the flag
 **Flag:-** pwn.college{gzn-6EtM4y3fvJpj6ALbVM_knXy.QX5ETO0wCOykjNzEzW}
 ```
 hacker@commands~catting-absolute-paths:~$ cat/flag
@@ -54,9 +35,14 @@ hacker@commands~catting-absolute-paths:/$ cat flag
 pwn.college{gzn-6EtM4y3fvJpj6ALbVM_knXy.QX5ETO0wCOykjNzEzW}
 ```
 ### New Learning
+I learned how to cat absolute paths.
 
 
-
+## More catting practice
+You can specify all sorts of paths as arguments to commands, and we'll practice some more with cat. In this level, I'll put the flag in some crazy directory, and I will not allow you to change directories with cd, so no cat flag for you. You must retrieve the flag by absolute path, wherever it is
+### Solve
+Used cat command and specified the directory as an argument to get the flag.
+**Flag:-**
 ```
 You cannot use the 'cd' command in this level, and must retrieve the flag by 
 absolute path. Plus, I hid the flag in a different directory! You can find it 
@@ -65,10 +51,33 @@ that directory!
 hacker@commands~more-catting-practice:~$ cat /usr/share/applications/flag
 pwn.college{gfdNlCPHmT-m_XZHiK2owihGYK9.QXwITO0wCOykjNzEzW}
 ```
+### New Learning
+I learned how to use cat more properly.
+
+
+## Greeping for a needle in haystack
+In this challenge, I've put a hundred thousand lines of text into the /challenge/data.txt file. grep it for the flag.
+### Solve
+Used grep command int the specified directory to get the specific line where the flag is.
+**Flag:-** pwn.college{YZigmbXmuPxGLF2RF8GnT2ppa5q.QX3EDO0wCOykjNzEzW}
 ```
 hacker@commands~grepping-for-a-needle-in-a-haystack:~$ grep pwn.college /challenge/data.txt
 pwn.college{YZigmbXmuPxGLF2RF8GnT2ppa5q.QX3EDO0wCOykjNzEzW}
 ```
+### New Learning
+I learned how to search specific contents in a file.
+
+
+## Comparing files
+Now for your challenge! There are two files in /challenge:
+
+/challenge/decoys_only.txt contains 100 fake flags
+/challenge/decoys_and_real.txt contains all 100 fake flags plus the one real flag
+
+Use diff to find what's different between these files and get your flag
+### Solve
+Used diff command to find the difference between the two lines that is the flag line in one of them, to get the flag.
+**Flag:-** pwn.college{kc5DrePIejuBZzmex54g_2eggY8.01MwMDOxwCOykjNzEzW}
 ```
 hacker@commands~comparing-files:~$ cat /challenge/decoys_only.txt
 pwn.college{fake_flag_number_1_sKOcWfwvtpM}
@@ -277,6 +286,15 @@ hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/de
 84a85
 > pwn.college{kc5DrePIejuBZzmex54g_2eggY8.01MwMDOxwCOykjNzEzW}
 ```
+### New Learning
+I learned how to find the difference in text between files.
+
+
+## Listing files
+ls will list files in all the directories provided to it as arguments, and in the current directory if no arguments are provided. In this challenge, we've named /challenge/run with some random name! List the files in /challenge to find it.
+### Solve
+Listed the files in challenge using ls command and then ran the /challenge/run which was renamed to get the flag.
+**Flag:-** pwn.college{gq2HnO53HVmzRLD7FQlSQDWxOzu.QX4IDO0wCOykjNzEzW}
 ```
 hacker@commands~listing-files:~$ ls /challenge/
 16302-renamed-run-20356  DESCRIPTION.md
@@ -284,6 +302,15 @@ hacker@commands~listing-files:~$ /challenge/16302-renamed-run-20356
 Yahaha, you found me! Here is your flag:
 pwn.college{gq2HnO53HVmzRLD7FQlSQDWxOzu.QX4IDO0wCOykjNzEzW}
 ```
+### New Learning
+I learned how to list files.
+
+
+## Touching files
+In this level, please create two files: /tmp/pwn and /tmp/college, and run /challenge/run to get your flag
+### Solve
+Made tmp file in the home directory, made two files in it that is pwn and college using touch command and then ran the /challenge/run to get the flag.
+**Flag:-** pwn.college{8y8orOozKa7tNKrJgVB2tNJluRr.QXwMDO0wCOykjNzEzW}
 ```
 hacker@commands~touching-files:~$ ls
 Desktop  a
@@ -298,6 +325,15 @@ hacker@commands~touching-files:/tmp$ /challenge/run
 Success! Here is your flag:
 pwn.college{8y8orOozKa7tNKrJgVB2tNJluRr.QXwMDO0wCOykjNzEzW}
 ```
+### New Learning
+I learned how to make files using touch command. 
+
+
+## Removing files
+This challenge will create a delete_me file in your home directory! Delete it, then run /challenge/check, which will make sure you've deleted it and then give you the flag
+### Solve
+Created a delete_me file using touch command, deleted it using rm and then did /challenge/check to check if it was deleted.
+**Flag:-** pwn.college{Y6XwHpoYnghuiRPVnjQRMGmCDzl.QX2kDM1wCOykjNzEzW}
 ```
 hacker@commands~removing-files:~$ touch delete_me
 hacker@commands~removing-files:~$ rm delete_me
@@ -305,6 +341,15 @@ hacker@commands~removing-files:~$ /challenge/check
 Excellent removal. Here is your reward:
 pwn.college{Y6XwHpoYnghuiRPVnjQRMGmCDzl.QX2kDM1wCOykjNzEzW}
 ```
+### New Learning
+I learned how to delete a file.
+
+
+## Moving files
+This challenge wants you to move the /flag file into /tmp/hack-the-planet (do it)! When you're done, run /challenge/check, which will check things out and give the flag to you.
+### Solve
+Used mv command to move the flag to a specified directory and then did /challenge/check to check if it has shifted.
+**Flag:-** pwn.college{MzbM3APpzATpHLmWSeF1dDyHUoe.0VOxEzNxwCOykjNzEzW}
 ```
 hacker@commands~moving-files:~$ ls
 Desktop  a  tmp
@@ -314,6 +359,15 @@ hacker@commands~moving-files:~$ /challenge/check
 Congrats! You successfully moved the flag to /tmp/hack-the-planet! Here it is:
 pwn.college{MzbM3APpzATpHLmWSeF1dDyHUoe.0VOxEzNxwCOykjNzEzW}
 ```
+### New Learning
+I learned how to shift files to specified directory.
+
+
+## Hidden files
+Interestingly, ls doesn't list all the files by default. Linux has a convention where files that start with a . don't show up by default in ls and in a few other contexts. To view them with ls, you need to invoke ls with the -a flag. Go find the flag, hidden as a dot-prepended file in /. 
+### Solve
+Went to / directory using cd command and did ls -a to get the hidden files and found out the flag and read it using cat.
+**Flag:-** pwn.college{Yx3nz7ujBlvI5MMFbNy-9cumWlv.QXwUDO0wCOykjNzEzW}
 ```
 hacker@commands~hidden-files:~$ ls
 Desktop  a  tmp
@@ -326,9 +380,12 @@ hacker@commands~hidden-files:/$ ls -a
 hacker@commands~hidden-files:/$ cat .flag-115902894710803
 pwn.college{Yx3nz7ujBlvI5MMFbNy-9cumWlv.QXwUDO0wCOykjNzEzW}
 ```
+### New Learning
+I learned how to find hidden files.
 
 
-
+## Making directories
+Now, go forth and create a /tmp/pwn directory and make a college file in it! Then run /challenge/run, which will check your solution and give you the flag.
 ### Solve
 I first made a directory with the required name using the mkdir command. I then changed the directory to the new directory created by using cd command followed by making the college file in the required directory.
 **Flag:-** pwn.college{EjvoaXZtBmFu7iuJ-Cx0cWQsH3A.QXxMDO0wCOykjNzEzW}
@@ -344,8 +401,3 @@ pwn.college{EjvoaXZtBmFu7iuJ-Cx0cWQsH3A.QXxMDO0wCOykjNzEzW}
 ```
 ### New Learning
 I learned how to make a directory and create a file in it.
-```
-```
-```
-```
-```
