@@ -40,7 +40,7 @@ pwn.college{MbcIamNtnP4qITIXAVidHve-TNS.QXyYTN0wCOykjNzEzW}
 You've set the PWN variable to the proper value!
 You've set the COLLEGE variable to the proper value!
 ```
-
+A
 ```
 hacker@variables~printing-exported-variables:~$ export FLAG
 hacker@variables~printing-exported-variables:~$ env $FLAG
